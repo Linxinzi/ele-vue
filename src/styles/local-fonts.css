@@ -19,28 +19,3 @@
   font-weight: 700;
   src: url('../assets/fonts/orbitron/orbitron-v34-latin-700.woff2') format('woff2');
 }
-
-/* Font Awesome 图标 */
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-  font-style: normal;
-  font-weight: 900;
-  src: url('../assets/fonts/font-awesome/webfonts/fa-solid-900.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Font Awesome 6 Brands';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/font-awesome/webfonts/fa-brands-400.woff2') format('woff2');
-}
-
-.fa,
-.fas {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-}
-
-.fab {
-  font-family: 'Font Awesome 6 Brands';
-}

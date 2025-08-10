@@ -7,17 +7,16 @@
       background-color="#409EFF"
       text-color="#fff"
       active-text-color="#ffd04b"
+      font-size="24px"
       :default-active="activeMenu"
       router
     >
       <el-menu-item index="/">首页</el-menu-item>
       
       <!-- 管理员功能 -->
-      <el-sub-menu v-if="authStore.isAdmin" index="system">
-        <template #title>系统管理</template>
-        <el-menu-item index="/dp">数据大屏</el-menu-item>
-        <el-menu-item index="/test">测试</el-menu-item>
-      </el-sub-menu>
+
+      <el-menu-item index="/test">数据大屏</el-menu-item>
+
       
       <el-menu-item index="/about">关于系统</el-menu-item>
       
@@ -26,7 +25,6 @@
         <el-icon><Connection /></el-icon>
         <span>管理员面板</span>
       </el-menu-item>
-      
       <!-- 登录状态 -->
       <div class="user-info">
         <el-dropdown v-if="authStore.isAuthenticated">
@@ -84,6 +82,12 @@ const showRegisterDialog = () => {
 </script>
 
 <style scoped>
+.el-menu-item,
+.el-sub-menu__title {
+  font-size: 18px !important;
+  font-weight: 500;
+  background-color: #053775 !important;
+}
 .app-container {
   display: flex;
   flex-direction: column;
@@ -99,6 +103,7 @@ const showRegisterDialog = () => {
   right: 0;
   z-index: 2000;
   width: 100%;
+  background-color: #053775 !important;
 }
 
 .main-content {
@@ -143,6 +148,6 @@ const showRegisterDialog = () => {
 
 /* 恢复导航栏天蓝色背景 */
 .el-menu {
-  background-color: #409EFF !important;
+  background-color: #053775 !important;
 }
 </style>

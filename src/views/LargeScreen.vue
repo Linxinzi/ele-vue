@@ -356,7 +356,10 @@ export default defineComponent({
   }
 });
 </script>
-
+<style>
+@import '@/assets/fonts/font-awesome/css/all.css';
+@import '@/styles/local-fonts.css';
+</style>
 <style scoped>
 * {
   margin: 0;
@@ -369,7 +372,7 @@ export default defineComponent({
   width: 100%;
   height: 100vh;
   position: relative;
-  background: radial-gradient(circle at center, #0c1b3a 0%, #050a1a 100%);
+  background: radial-gradient(circle at center, #3F5499 0%, #050a1a 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;

@@ -9,19 +9,19 @@
       >
         <el-menu-item index="1">
           <el-icon><Monitor /></el-icon>
-          <span>防火墙页面</span>
+          <span class="font">防火墙页面</span>
         </el-menu-item>
         <el-menu-item index="2">
           <el-icon><DataAnalysis /></el-icon>
-          <span>用户管理</span>
+          <span class="font">用户管理</span>
         </el-menu-item>
         <el-menu-item index="3">
           <el-icon><Setting /></el-icon>
-          <span>系统设置</span>
+          <span class="font">系统设置</span>
         </el-menu-item>
         <el-menu-item index="4">
           <el-icon><HelpFilled /></el-icon>
-          <span>帮助文档</span>
+          <span class="font">帮助文档</span>
         </el-menu-item>
       </el-menu>
     </div>
@@ -50,7 +50,7 @@ import { ref, computed } from 'vue'
 const pageConfig = [
   {
     name: '防火墙页面',
-    url: '/proxy/fhq',
+    url: '/proxy/fhq/',
   },
   {
     name: '用户管理',
@@ -58,11 +58,11 @@ const pageConfig = [
   },
   {
     name: '系统设置',
-    url: '/dp',
+    url: '/xt',
   },
   {
     name: '帮助文档',
-    url: 'http://localhost:8080/help',
+    url: '/help',
   }
 ]
 
@@ -93,9 +93,17 @@ const handleIframeLoad = () => {
   display: flex;
 }
 
+.font {
+  color: #ffffff;
+}
+
+.el-menu-item {
+  background-color: #0B4187 !important
+}
+
 .left-sidebar {
   width: 220px;
-  background-color: #fff;
+  background: #0D4594 !important;
   border-right: 1px solid #e6e6e6;
   box-shadow: 2px 0 6px rgba(0, 21, 41, 0.1);
   display: flex;

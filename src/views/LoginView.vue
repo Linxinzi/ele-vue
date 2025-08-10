@@ -20,7 +20,7 @@
           <div class="line"></div>
         </div>
       </div>
-      
+
       <el-form 
         ref="loginFormRef" 
         :model="loginForm" 
@@ -244,7 +244,7 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-
+@import '@/assets/fonts/font-awesome/css/all.css';
 .login-container {
   position: fixed; 
   top: 60px; /* 导航栏高度 */
@@ -254,7 +254,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #0c1b3a 0%, #050a1a 100%);
+  background: radial-gradient(circle at center, #3F5499 0%, #050a1a 100%);
   overflow: hidden;
   z-index: 1000;
 }

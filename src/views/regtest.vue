@@ -145,6 +145,8 @@ import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, type FormInstance } from 'element-plus'
 import { useAuthStore } from '@/stores/authStore'
+import '@/styles/local-fonts.css';
+import '@/assets/fonts/font-awesome/css/all.css'
 
 const router = useRouter()
 const authStore = useAuthStore()
@@ -260,8 +262,6 @@ const particleStyle = (index: number) => {
 </script>
 
 <style scoped lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 
 .register-container {
   position: fixed;

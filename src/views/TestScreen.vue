@@ -515,10 +515,10 @@ export default defineComponent({
       
       // 根据不同的充电站跳转到不同的URL
       const urls = [
-        'http://localhost:8080/dp',  // 1号充电站
-        'http://localhost:8080/dp',  // 2号充电站
-        'http://localhost:8080/dp3',  // 3号充电站
-        'http://localhost:8080/dp'   // 4号充电站
+        'https://www.ym.com/dp',  // 1号充电站
+        'https://www.ym.com/dp',  // 2号充电站
+        'https://www.ym.com/dp3',  // 3号充电站
+        'https://www.ym.com/dp'   // 4号充电站
       ];
       
       if (index >= 0 && index < urls.length) {
@@ -571,7 +571,7 @@ export default defineComponent({
   padding: 0px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #0c1a3d, #162d5e);
+  background: radial-gradient(circle at center, #3F5499 0%, #050a1a 100%);
   color: #e0f7ff;
 }
 

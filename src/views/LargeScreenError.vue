@@ -106,7 +106,16 @@
               <div class="charger-name">充电桩 #{{ charger.id }}</div>
               <div :class="['charger-status', charger.status === 'normal' ? 'status-normal' : 'status-abnormal']">
                 <div class="status-indicator"></div>
-                {{ charger.status === 'normal' ? '正常' : '异常' }}
+                {{
+                  (() => {
+                    switch(charger.status) {
+                      case 'normal': return '正常';
+                      case 'overcurrent': return '过流';
+                      case 'short_circuit': return '短路';
+                      default: return '异常'; // 兜底处理
+                    }
+                  })()
+                }}
               </div>
             </div>
             <div class="charger-content">
@@ -226,7 +235,16 @@
       <div class="tooltip-header">
         <div class="tooltip-title">充电桩 #{{ currentCharger.id }} 详情</div>
         <div :class="['tooltip-status', currentCharger.status === 'normal' ? 'status-normal' : 'status-abnormal']">
-          {{ currentCharger.status === 'normal' ? '正常' : '异常' }}
+          {{
+            (() => {
+              switch(currentCharger.status) {
+                case 'normal': return '正常';
+                case 'overcurrent': return '过流';
+                case 'short_circuit': return '短路';
+                default: return '异常'; // 兜底处理
+              }
+            })()
+          }}
         </div>
       </div>
       <div class="tooltip-content">
@@ -266,6 +284,7 @@
 import { defineComponent, ref, onMounted, computed } from 'vue';
 import * as echarts from 'echarts';
 import api from '@/services/api'
+import '@/styles/local-fonts.css';
 
 export default defineComponent({
   name: 'LargeScreen',
@@ -316,7 +335,20 @@ export default defineComponent({
           const power = (parseFloat(item.current) * parseFloat(item.voltage) / 1000);
           
           // 转换状态为前端使用的格式
-          const status = item.status === 'normal' ? 'normal' : 'abnormal';
+          let status;
+          switch (item.status) {
+            case 'normal':
+              status = 'normal';
+              break;
+            case 'overcurrent':
+              status = 'overcurrent';
+              break;
+            case 'short_circuit':
+              status = 'short_circuit';
+              break;
+            default:
+              status = 'unknown'; // 或保留原逻辑如 'abnormal'
+          }
           
           // 生成模拟数据（因为API没有提供这些字段）
           const consumed = (Math.random() * 30 + 10).toFixed(1); // 随机已充电量
@@ -489,7 +521,7 @@ export default defineComponent({
   width: 100%;
   height: 100vh;
   position: relative;
-  background: radial-gradient(circle at center, #0c1b3a 0%, #050a1a 100%);
+  background: radial-gradient(circle at center, #3F5499 0%, #050a1a 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1371,7 +1403,6 @@ export default defineComponent({
 
 <style>
 /* 全局字体图标样式 */
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css';
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {

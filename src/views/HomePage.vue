@@ -98,7 +98,7 @@ const particleStyle = (index: number) => {
 </script>
 
 <style scoped lang="scss">
-
+@import '@/assets/fonts/font-awesome/css/all.css';
 .home-container {
   position: fixed;
   top: 0;
@@ -109,7 +109,7 @@ const particleStyle = (index: number) => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #0c1b3a 0%, #050a1a 100%);
+  background: radial-gradient(circle at center, #3F5499 0%, #050a1a 100%);
   overflow: hidden;
   z-index: 1000;
 }
